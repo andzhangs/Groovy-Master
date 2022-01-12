@@ -9,11 +9,11 @@ import java.sql.Statement
 
 class JdbcUtil {
 
-    //创建三个常量来存放地址、用户名、和密码   ctrl +shift+x   变为大写
-    private static final String URL="jdbc:mysql://localhost:3306/weatherinfo?characterEncoding=utf8&useSSL=false";
+    //创建三个常量来存放地址、用户名、和密码   ctrl +shift+x   变为大写 数据库名：mysql
+    private static final String URL="jdbc:mysql://localhost:3306/mysql?serverTimezone=UTC&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true";
     private static final String NAME="root";
     private static final String PASSWORD="admin2020";
-    private static final String DRIVER_CLASS="com.mysql.jdbc.Driver"
+    private static final String DRIVER_CLASS="com.mysql.cj.jdbc.Driver"
 
     public static void main(String[] args) {
         //1.加载驱动程序
@@ -22,9 +22,9 @@ class JdbcUtil {
         Connection conn= DriverManager.getConnection(URL, NAME, PASSWORD);
         //3.通过数据库的连接操作数据库，实现增删改查
         Statement stmt =conn.createStatement();
-        ResultSet rs=stmt.executeQuery("select * from weather");
+        ResultSet rs=stmt.executeQuery("select * from help_keyword");
         while(rs.next()) {
-            System.out.println(rs.getString("city")+", "+rs.getInt('temperature'))
+            System.out.println(rs.getInt("help_keyword_id")+", "+rs.getString('name'))
         }
     }
 }

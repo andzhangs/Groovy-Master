@@ -1,17 +1,18 @@
 package first.groovy.dataconstructutures
 
 def range = 0..10
-println range[0]
-println range.contains(9)  //是否包含
-println range.from //起始值
-println range.to   //结束之
+println '第一个值：' + range[0]
+println '是否包含第10个值：' + range.contains(9)  //是否包含
+println '起始值：' + range.from //起始值
+println '结束值：' + range.to   //结束值
 
 //遍历
+print '输出：'
 range.each { print it + '\t' }
 println()
 
 static def get(Number number) {
-    def result
+    def result = null
     switch (number) {
         case 0..<60: result = '学渣'
             break

@@ -20,20 +20,20 @@ binding1.setVariable('name',"哈哈哈---")
 def groovyShell1 = new GroovyShell(binding1)
 def result1 = groovyShell1.evaluate(new File('Script1Params.groovy'))
 println("Script1Params returned: $result1")
-//
-//
-////----------------------------------------------------------------------------------------------
-//def groovy_Shell = new GroovyShell()
-//groovy_Shell.evaluate(new File('Script1.groovy'))
-////简写版本
-//println('简写版：')
-//evaluate(new File('Script1.groovy'))
+
 
 //----------------------------------------------------------------------------------------------
-//def gCLoader = new GroovyClassLoader();
-//Class gClass = gCLoader.parseClass(new File('Script1.groovy'))
-//def gObj = (GroovyObject) gClass.getDeclaredConstructor().newInstance()
-//gObj.invokeMethod('test', 200)
+def groovy_Shell = new GroovyShell()
+groovy_Shell.evaluate(new File('Script1.groovy'))
+//简写版本
+println('简写版：')
+evaluate(new File('Script1.groovy'))
+
+//----------------------------------------------------------------------------------------------
+def gCLoader = new GroovyClassLoader();
+Class gClass = gCLoader.parseClass(new File('Script1.groovy'))
+def gObj = (GroovyObject) gClass.getDeclaredConstructor().newInstance()
+gObj.invokeMethod('test', 200)
 
 
 

@@ -1,14 +1,16 @@
 package main.files
 
-def path = '/Users/zhangshuai/IdeaProjects/FirstScript-Groovy/FirstScript-Groovy.iml'
+def path = '/Users/zhangshuai/Project____/IdeaProjects/Groovy-Master/Groovy-Master.iml'
 def file = new File(path)
+
+//方式一
 file.eachLine {
     line -> println(line)
 }
-
-println file.getText()
-
-println file.readLines()
+//方式二
+println "打印"+file.getText()
+//方式三
+println "输出行数："+file.readLines()
 
 //println file.withReader { reader ->
 //    char[] buffer = new char[100]
